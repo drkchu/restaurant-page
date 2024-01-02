@@ -1,11 +1,13 @@
 import sushiImage from '../assets/img/restaurant-page.jpg';
+import headerComponent from '../components/header'
 
-export default function() {
+export default function() { // populates contentDiv with the home stuff
     const contentDiv = document.querySelector('#content'); 
 
-    const header = document.createElement('header');
-    header.textContent = "Indulge in Exquisite Flavors: Dive into a Culinary Journey at Derek's Sushi – Where Art Meets Sushi Perfection!";
-    header.classList.add('header');
+    const homeContainer = document.createElement('div');
+    homeContainer.classList.add('home-container');
+
+    const header = headerComponent();
 
     const sushiImg = document.createElement('img');
     sushiImg.src = sushiImage;
@@ -15,9 +17,14 @@ export default function() {
     info.textContent = "Step into a world where culinary excellence meets creativity, and let our goal to wow you with every dish redefine your expectations of sushi. Prepare for an extraordinary dining journey, where each roll tells a story of precision, innovation, and an unyielding dedication to delighting your palate.";
     info.classList.add('info');
 
-    contentDiv.appendChild(header);
-    contentDiv.appendChild(sushiImg);
-    contentDiv.appendChild(info);
+    homeContainer.appendChild(header);
+    homeContainer.appendChild(sushiImg);
+    homeContainer.appendChild(info);
+
+    contentDiv.appendChild(homeContainer);
+
+    const newHomeButton = document.querySelector('.home-button');
+    newHomeButton.disabled = true;
 }
 
 /**

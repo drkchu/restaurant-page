@@ -8,7 +8,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true, // deletes anything in dist/ that's not being used
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+    title: "Derek's Sushi"
+  })],
   devtool: 'inline-source-map',
   module: {
     rules: [

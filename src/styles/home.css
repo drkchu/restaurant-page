@@ -1,3 +1,9 @@
+:root {
+    --header-color: yellow;
+    --button-color: green;
+    --button-disabled-color: darkgreen;
+}
+
 .sushi-img {
     display: block; 
     width: 60vw;
@@ -10,7 +16,24 @@
     text-align: center;
 }
 .header {
-    font-weight: bold;
+    display: flex;
+    background-color: var(--header-color);
+    height: 3rem;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.home-button,
+.menu-button,
+.contact-button {
+    width: 10rem;
+    background-color: var(--button-color);
+}
+
+.home-button:disabled,
+.menu-button:disabled,
+.contact-button:disabled {
+    background-color: var(--button-disabled-color);
 }
 
 .info {
